@@ -27,20 +27,7 @@ $(function() {
   //   event.stopPropagation();
   // });
 
-  // Form Subscribe
-  $(".subscribe-form").submit(function() {
-    var th = $(this);
-    $.ajax({
-      type: "POST",
-      url: "mail.php",
-      data: th.serialize()
-    }).done(function() {
-      // после успешной отправки скрываем форму подписки и выводим окно с благодарностью за заполнение формы
-      $subscribeWindow.fadeOut();
-      $popThankYouWindow.fadeIn();
-      // используем куки на 30 дней, если человек заполнил форму
-      // для куки обязательно должен быть подключен jquery.cookie.min.js
-      //$.cookie('hideTheModal', 'true', { expires: 30 });
+  
       // очищаем форму
       setTimeout(function() {
         th.trigger("reset");
